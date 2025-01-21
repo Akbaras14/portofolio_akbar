@@ -67,7 +67,7 @@ let likeCount = localStorage.getItem('likeCount') ? parseInt(localStorage.getIte
 function likePortfolio() {  
   const username = document.getElementById('username').value; // Get the username from input  
   if (username) {  
-    const message = `${username} menyukai portofolio anda`; // Include username in the message  
+    const message = `hai saya ${username} menyukai portofolio anda`; // Include username in the message  
     const whatsappLink = `https://wa.me/+6285893802972?text=${encodeURIComponent(message)}`;  
     window.open(whatsappLink, '_blank');  
   
