@@ -68,7 +68,7 @@ function likePortfolio() {
   const username = document.getElementById('username').value; // Get the username from input  
   if (username) {  
     const message = `${username} menyukai portofolio anda`; // Include username in the message  
-    const whatsappLink = `https://wa.me/085893802972?text=${encodeURIComponent(message)}`;  
+    const whatsappLink = `https://wa.me/+6285893802972?text=${encodeURIComponent(message)}`;  
     window.open(whatsappLink, '_blank');  
   
     likeCount++; // Increment like count  
