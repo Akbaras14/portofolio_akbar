@@ -85,3 +85,39 @@ likeButton.addEventListener('click', likePortfolio);
   
 // Update the displayed like count on page load  
 document.getElementById('like-count').innerText = likeCount;  
+let selectedRating = 0;
+
+// Event klik bintang
+document.querySelectorAll('.rating span').forEach(star => {
+    star.addEventListener('click', function () {
+        selectedRating = this.getAttribute('data-star');
+
+        // Reset semua
+        document.querySelectorAll('.rating span').forEach(s => s.classList.remove('active'));
+
+        // Aktifkan bintang yang dipilih & semua yang di kiri
+        this.classList.add('active');
+        let previous = this.previousElementSibling;
+        while (previous) {
+            previous.classList.add('active');
+            previous = previous.previousElementSibling;
+        }
+    });
+});
+
+// Kirim saran
+document.getElementById('kirim-saran').addEventListener('click', function () {
+    const nama = document.getElementById('nama-feedback').value;
+    const saran = document.getElementById('saran').value;
+
+    if (!nama || selectedRating === 0 || !saran) {
+        alert("Harap lengkapi semua kolom!");
+        return;
+    }
+
+    // Contoh: tampilkan hasil (bisa diproses ke backend/Google Form)
+    alert(
+        `Terima kasih atas feedback!\n\nNama: ${nama}\nRating: ${selectedRating} ⭐\nSaran: ${saran}`
+    );
+});
+  
