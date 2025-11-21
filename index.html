@@ -9,394 +9,7 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  
     <link rel="stylesheet" href="styles.css" />
-    <title>Akbar AS - Portfolio</title>
-    <style>
-      /* Enhanced CSS for professionalism and animations */
-      body {
-        font-family: 'Arial', sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: #333;
-        overflow-x: hidden;
-      }
-
-      nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(10px);
-        z-index: 1000;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-      }
-
-      .nav__bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .nav__logo a {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #667eea;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .nav__logo a:hover {
-        color: #764ba2;
-      }
-
-      .nav__links {
-        display: flex;
-        list-style: none;
-        gap: 2rem;
-      }
-
-      .nav__links a {
-        text-decoration: none;
-        color: #333;
-        font-weight: 500;
-        transition: color 0.3s ease, transform 0.3s ease;
-      }
-
-      .nav__links a:hover {
-        color: #667eea;
-        transform: translateY(-2px);
-      }
-
-      .nav__menu__btn {
-        display: none;
-        cursor: pointer;
-      }
-
-      @media (max-width: 768px) {
-        .nav__links {
-          display: none;
-          flex-direction: column;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          width: 100%;
-          background: rgba(255, 255, 255, 0.9);
-          padding: 1rem;
-        }
-        .nav__links.active {
-          display: flex;
-        }
-        .nav__menu__btn {
-          display: block;
-        }
-      }
-
-      .section__container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 4rem 2rem;
-      }
-
-      .header__container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        text-align: left;
-        animation: fadeInUp 1s ease-out;
-      }
-
-      .header__container img {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease;
-      }
-
-      .header__container img:hover {
-        transform: scale(1.05);
-      }
-
-      .header__container h1 {
-        font-size: 3rem;
-        margin: 0;
-        color: #fff;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      }
-
-      .header__container h1 span {
-        color: #ffd700;
-      }
-
-      .header__container p {
-        font-size: 1.2rem;
-        color: #fff;
-        margin: 1rem 0;
-        max-width: 600px;
-      }
-
-      .header__btns a {
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
-        background: #667eea;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 25px;
-        transition: background 0.3s ease, transform 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      .header__btns a:hover {
-        background: #764ba2;
-        transform: translateY(-3px);
-      }
-
-      .skill__container {
-        text-align: center;
-        animation: fadeIn 1s ease-out 0.5s both;
-      }
-
-      .skill__container h2 {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-        color: #fff;
-      }
-
-      .skill__flex {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        flex-wrap: wrap;
-      }
-
-      .skill__flex li {
-        list-style: none;
-        font-size: 3rem;
-        color: #fff;
-        transition: transform 0.3s ease, color 0.3s ease;
-      }
-
-      .skill__flex li:hover {
-        transform: scale(1.2);
-        color: #ffd700;
-      }
-
-      .project__container {
-        animation: fadeIn 1s ease-out 1s both;
-      }
-
-      .project__container h2 {
-        font-size: 2.5rem;
-        text-align: center;
-        margin-bottom: 2rem;
-        color: #fff;
-      }
-
-      .project__grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-      }
-
-      .project__card {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .project__card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      }
-
-      .project__card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
-
-      .project__card__details {
-        padding: 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .project__card__details h4 {
-        color: #fff;
-      }
-
-      .project__card__details p {
-        color: #ddd;
-      }
-
-      .project__card__details a {
-        color: #ffd700;
-        font-size: 1.5rem;
-        transition: transform 0.3s ease;
-      }
-
-      .project__card__details a:hover {
-        transform: scale(1.2);
-      }
-
-      .experience__container {
-        animation: fadeIn 1s ease-out 1.5s both;
-      }
-
-      .experience__container h2 {
-        font-size: 2.5rem;
-        text-align: center;
-        margin-bottom: 2rem;
-        color: #fff;
-      }
-
-      .experience__list {
-        list-style: none;
-        padding: 0;
-      }
-
-      .experience__list li {
-        background: rgba(255, 255, 255, 0.1);
-        margin-bottom: 2rem;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease;
-      }
-
-      .experience__list li:hover {
-        transform: translateX(10px);
-      }
-
-      .experience__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1rem;
-      }
-
-      .experience__header img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin-right: 1rem;
-      }
-
-      .experience__header h4 {
-        color: #ffd700;
-      }
-
-      .experience__header p {
-        color: #ddd;
-      }
-
-      footer {
-        background: rgba(0, 0, 0, 0.8);
-        color: #fff;
-        text-align: center;
-        padding: 2rem;
-        animation: fadeIn 1s ease-out 2s both;
-      }
-
-      .footer__container h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-      }
-
-      .footer__container p {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-      }
-
-      .mail__to a {
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
-        background: #667eea;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 25px;
-        margin-bottom: 2rem;
-        transition: background 0.3s ease;
-      }
-
-      .mail__to a:hover {
-        background: #764ba2;
-      }
-
-      .footer__socials {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-bottom: 2rem;
-      }
-
-      .footer__socials a {
-        color: #fff;
-        font-size: 2rem;
-        transition: transform 0.3s ease, color 0.3s ease;
-      }
-
-      .footer__socials a:hover {
-        transform: scale(1.2);
-        color: #ffd700;
-      }
-
-      .like-button {
-        margin-top: 2rem;
-      }
-
-      .like-button p {
-        margin-bottom: 1rem;
-      }
-
-      .like-button input {
-        padding: 0.5rem;
-        border-radius: 5px;
-        border: none;
-        margin-right: 1rem;
-      }
-
-      .like-button button {
-        padding: 0.5rem 1rem;
-        background: #667eea;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-      }
-
-      .like-button button:hover {
-        background: #764ba2;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
+    <title>Akbar AS</title>
   </head>
   <body>
     <nav>
@@ -419,19 +32,18 @@
     </nav>
     <header class="section__container header__container" id="home">
       <img src="assets/avatar.png" alt="header" />
-      <div>
-        <h1>Hai, saya <br />Akbar Aditiya Sugianto <br/><span>Mari kenalan!</span></h1>
-        <p>
-          Saya adalah mahasiswa Universitas Pamulang Fakultas Ilmu Komputer dengan Studi Teknik Informatika. Saya memiliki kemampuan di bidang pengolahan Data, Data Science, Data Analytics, Fullstack Developer Web maupun Mobile, UI/UX, dan Design Grafis.
-        </p>
-        <div class="header__btns">
-          <a href="assets/CVAkbar.pdf" download>Download CV</a>
-        </div>
+      <h1>Hai i'm <br />Akbar Aditiya Sugianto <br/><span>Mari kenalan!</span> </h1>
+      
+      <p>
+        Saya adalah mahasiswa Universitas Pamulang Fakultas Ilmu Komputer dengan Studi Teknik Informatika, saya memiliki kemampuan di bidang pengolahan Data, Data scientists, Data analysts, Fullstack Developer Web maupun Mobile, UI/UX dan Design Grafis.
+      </p>
+      <div class="header__btns">
+        <a href="assets/CVAkbar.pdf" download>Download CV</a>
       </div>
     </header>
 
     <section class="section__container skill__container">
-      <h2>Keahlian Bahasa Pemrograman</h2>
+      <h2>KEAHLIAN BAHASA PEMROGRAMAN </h2>
       <ul class="skill__flex">
         <li>
           <span><i class="ri-javascript-fill"></i></span>
@@ -452,20 +64,20 @@
           <span><i class="ri-reactjs-line"></i></span>
         </li>
         <li>  
-          <span><i class="fab fa-python"></i></span>
-        </li>
+        <span><i class="fab fa-python"></i></span> <!-- Python icon -->  
+      </li>
       </ul>
     </section>
 
     <section class="section__container project__container" id="project">
-      <h2>Project yang Saya Buat</h2>
+      <h2>PROJECT YANG SAYA BUAT</h2>
       <div class="project__grid">
         <div class="project__card">
           <img src="assets/project-1.jpg" alt="project" />
           <div class="project__card__details">
             <div>
-              <p>Coming Soon!</p>
-              <h4>Coming Soon!</h4>
+              <p>COMING SOON!</p>
+              <h4>COMING SOON!</h4>
             </div>
             <a href="#"><i class="ri-arrow-right-up-line"></i></a>
           </div>
@@ -474,8 +86,8 @@
           <img src="assets/project-2.jpg" alt="project" />
           <div class="project__card__details">
             <div>
-              <p>Coming Soon!</p>
-              <h4>Coming Soon!</h4>
+              <p>COMING SOON!</p>
+              <h4>COMING SOON!</h4>
             </div>
             <a href="#"><i class="ri-arrow-right-up-line"></i></a>
           </div>
@@ -484,57 +96,125 @@
     </section>
 
     <section class="section__container experience__container" id="experience">
-      <h2>Pengalaman</h2>
+      <h2>PENGALAMAN</h2>
       <ul class="experience__list">
         <li>
           <div class="experience__header">
             <div>
-              <img src="assets/mekanik.png" alt="CV. BARKAH" />
-              <h4>Senior Mekanik</h4>
+              <img src="assets/mekanik.png" alt="google" />
+              <h4>SENIOR MEKANIK</h4>
             </div>
-            <p>Juni 2019 - Desember 2019</p>
+            <p>JUNI 2019 - DESEMBER 2019</p>
           </div>
           <p>
-            Sebagai Senior Mekanik di CV. BARKAH, saya mempelopori berbagai perbaikan kendaraan ringan dengan efisien dan tepat sasaran, membimbing mekanik junior, dan memainkan peran penting dalam mengembangkan kemajuan bengkel. Pekerjaan saya melibatkan pemanfaatan teknologi mutakhir untuk memperbaiki kendaraan ringan dengan cepat atau efisien dan mendorong pertumbuhan bengkel.
+            Sebagai Senior Mekanik di CV. BARKAH, saya mempelopori berbagai perbaikan kendaraan ringan dengan efisien dan tepat sasaran, membimbing mekanik junior, dan memainkan peran penting dalam mengembangkan kemajuan bengkel. Pekerjaan saya melibatkan pemanfaatan teknologi mutakhir untuk memeperbaiki kendaraan ringan dengan cepat atau efisien dan mendorong pertumbuhan bengkel.
           </p>
         </li>
         <li>
           <div class="experience__header">
             <div>
-              <img src="assets/lesehanaldan.png" alt="Lesehan Aldan Purwokerto" />
-              <h4>Waiters</h4>
+              <img src="assets/lesehanaldan.png" alt="apple" />
+              <h4>WAITERS</h4>
             </div>
-            <p>Desember 2019 - Februari 2020</p>
+            <p>DESEMBER 2019 - FEBRUARY 2020</p>
           </div>
           <p>
-            Di Lesehan Aldan Purwokerto yang bergerak di bidang resto, saya berkontribusi pada pelayanan pelanggan, berkolaborasi dengan tim untuk menghadirkan produk yang sesuai pesanan dan cepat dalam pelayanan. Peran saya difokuskan pada pelayanan yang menjaga keramahan dan membuat nyaman pelanggan.
+            Di Lesehan Aldan Purwokerto yang bergerak di bidang resto, saya berkontribusi pada pelayanan pelanggan, berkolaborasi dengan tim  untuk menghadirkan produk yang dengan tepat sesuai pesanan dan cepat dalam pelayanan. Peran saya difokuskan pada pelayanan yang menjaga keramahan dan membuat nyaman pelanggan.
           </p>
         </li>
         <li>
           <div class="experience__header">
             <div>
-              <img src="assets/lesehanaldan.png" alt="Lesehan Aldan Purwokerto" />
-              <h4>Junior Chef</h4>
+              <img src="assets/lesehanaldan.png" alt="meta" />
+              <h4>JUNIOR CHEF</h4>
             </div>
-            <p>Februari 2020 - Agustus 2020</p>
+            <p>FEBRUARY 2020 - AGUSTUS 2020</p>
           </div>
           <p>
-            Selama masa jabatan saya di Lesehan Aldan Purwokerto, saya mengasah keterampilan saya dalam bidang mengolah makanan hingga akhirnya saya diberi kenaikan jabatan menjadi Junior Chef dengan tanggung jawab meliputi pengolahan makanan, penampilan makanan, dan penerapan quality control makanan sebelum keluar menuju pelanggan, serta mendukung teknisi senior dalam menciptakan makanan yang inovatif.
+            Selama masa jabatan saya di Lesehan Aldan Purwokerto, saya mengasah keterampilan saya dalam bidang mengolah makanan hingga akhirnya saya diberi kenaikan jabatan menjadi Junior Chef dengan Tanggung jawab saya meliputi pengolahan makanan, penampilan makanan, dan penerapan quality control makanan sebelum keluar menuju pelanggan, serta mendukung teknisi senior dalam menciptakan makanan yang inovatif.
           </p>
         </li>
         <li>
           <div class="experience__header">
             <div>
-              <img src="assets/lesehanaldan.png" alt="Lesehan Aldan Purwokerto" />
-              <h4>Head Chef</h4>
+              <img src="assets/lesehanaldan.png" alt="meta" />
+              <h4>HEAD CHEF</h4>
             </div>
-            <p>Agustus 2020 - Desember 2021</p>
+            <p>AGUSTUS 2020 - DESEMBER 2021</p>
           </div>
           <p>
-            Untuk kedua kali masa jabatan saya di Lesehan Aldan Purwokerto, saya mengasah keterampilan saya dalam bidang mengolah makanan dan management perusahaan hingga akhirnya saya diberi kenaikan jabatan kembali menjadi Head Chef dengan tanggung jawab meliputi Quality Control bahan baku makanan yang masuk dari supplier, persediaan stok bahan baku setiap harinya, dan penerapan money management keuangan sebelum melakukan order bahan baku kepada supplier, serta mendukung General Manager dalam menciptakan menu baru yang lebih inovatif.
+            untuk kedua kali masa jabatan saya di Lesehan Aldan Purwokerto, saya mengasah keterampilan saya dalam bidang mengolah makanan dan management perusahaan hingga akhirnya saya diberi kenaikan jabatan kembali menjadi Head Chef dengan Tanggung jawab saya meliputi Quality Control bahan baku makanan yang masuk dari suppliyer, persediaan stok bahan baku setiap harinya, dan penerapan money management keuangan sebelum melakukan order bahan baku kepada suppliyer, serta mendukung General Manager dalam menciptakan menu baru yang lebih inovatif.
           </p>
         </li>
         <li>
           <div class="experience__header">
             <div>
-              <img src="assets/search.png" alt="Pt. Ekstrindo Laminasi"
+              <img src="assets/search.png" alt="EKSTRINDO" />
+              <h4>CLEANING SERVICE</h4>
+            </div>
+            <p>DESEMBER 2021 - SEKARANG</p>
+          </div>
+          <p>
+            Di Pt.Ekstrindo Laminasi yang bergerak di bidang laminasi kertas saya mengemban jabatan sebagai cleaning service dengan memiliki tanggung jawab menjaga kebersihan perusahaan dan bertanggung jawab atas penggunaan chemical cleaning</p>
+        </li>
+        <li>
+          <div class="experience__header">
+            <div>
+              <img src="assets/bengkelcoding.png" alt="meta" />
+              <h4>BENGKEL CODING</h4>
+            </div>
+            <p>"freelance" AGUSTUS 2022 - SEKARANG</p>
+          </div>
+          <p>
+            Di BENGKEL CODING yang bergerak di pembuatan web dan software teknologi. saya mengemban jabatan sebagai Leader dengan memiliki tanggung jawab melayani user, Mengembangkan dan merancang perencanaan pekerjaan, Management keuangan perusahaan dan melakukan Quality control software sebelum diserahkan ke user.</p>
+        </p>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <div class="section__container footer__container" id="contact">
+        <h2>Hubungi Saya</h2>
+        <p>
+          ingin terhubung dengan saya? jangan ragu untuk menghubungi saya. Anda dapat menghubungi saya melalui email atau melalui saluran media sosial saya.
+          Saya selalu bersemangat untuk berkolaborasi dengan anda dalam memajukan perusahaan anda
+        </p>
+        <div class="mail__to">  
+          <a href="mailto:akbaraditiya0@gmail.com" title="Send an email to Akbar Aditya">  
+            <span><i class="ri-mail-line"></i></span>akbaraditiya0@gmail.com</a>  
+        </div>  
+        <ul class="footer__socials">  
+          <li>  
+            <a href="https://www.google.com" target="_blank" rel="noopener" title="Visit Google">  
+              <i class="ri-google-fill"></i>  
+            </a>  
+          </li>  
+          <li>  
+            <a href="https://wa.me/+6285893802972" target="_blank" rel="noopener" title="Visit Twitter">  
+              <i class="fab fa-whatsapp"></i>  
+            </a>  
+          </li>  
+          <li>  
+            <a href="https://www.tiktok.com/@bengkel_coding" target="_blank" rel="noopener" title="Visit YouTube">  
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </li>   
+          <li>   
+              <a class="fas fa-thumbs-up"></a >
+                <a id="like-count">0</a>
+            </li>   
+        </ul>  
+<div class="like-button">  
+   <p>
+          Bantu perkembangan Portofolio ini dengan cara like portofolio ini
+    </p>
+  <input type="text" id="username" placeholder="Masukkan nama Anda " />  
+  <button id="like-button">Like</button> <!-- Ensure this button has the ID 'like-button' -->  
+</div>  
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+  </body>
+</html> 
